@@ -34,3 +34,11 @@ def predict(data: InputData):
         "klaster": klaster,
         "label": LABEL_MAP[klaster]  # ← tambahkan ini
     }
+
+@app.get("/params")
+def get_params():
+    return {
+        "mean": mean.tolist(),
+        "std": std.tolist(),
+        "centroids_zscore": centroids.tolist()
+    }
