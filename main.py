@@ -42,3 +42,18 @@ def get_params():
         "std": std.tolist(),
         "centroids_zscore": centroids.tolist()
     }
+
+@app.get("/debug")
+def debug():
+    # Test dengan nilai persis centroid klaster 3
+    x = np.array([49.72, 38.21, 6.76, 137.58, 4.18])
+    x_scaled = (x - mean) / std
+    jarak = np.linalg.norm(centroids - x_scaled, axis=1)
+    return {
+        "x_scaled": x_scaled.tolist(),
+        "centroids_zscore": centroids.tolist(),
+        "jarak": jarak.tolist(),
+        "argmin": int(np.argmin(jarak)),
+        "mean": mean.tolist(),
+        "std": std.tolist()
+    }
