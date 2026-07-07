@@ -12,10 +12,10 @@ std       = np.array(params["std"])
 centroids = np.array(params["centroids_zscore"])
 
 LABEL_MAP = {
-    1: "Severe Insulin-Deficient Diabetes (SIDD)",
-    2: "Mild Obesity-Related Diabetes (MOD)", 
-    3: "Severe Insulin-Resistant Diabetes (SIRD)",
-    4: "Mild Age-Related Diabetes (MARD)"
+    1: "Severe Insulin-Resistant Diabetes (SIRD)",
+    2: "Mild Age-Related Diabetes (MARD)",
+    3: "Severe Insulin-Deficient Diabetes (SIDD)",
+    4: "Mild Obesity-Related Diabetes (MOD)"
 }
 
 class InputData(BaseModel):
